@@ -1,12 +1,16 @@
-// ArticleList.js
 import React from 'react';
-import Article from './Article'; // Assuming you have an Article component
+import Article from './Article'; 
 
 const ArticleList = ({ posts }) => {
   return (
     <main>
-      {posts.map((post) => (
-        <Article key={post.id} title={post.title} date={post.date} preview={post.preview} />
+      {posts.map((post, index) => (
+        <Article
+          key={index}
+          title={post.title}
+          date={post.date}
+          preview={post.preview}
+        />
       ))}
     </main>
   );

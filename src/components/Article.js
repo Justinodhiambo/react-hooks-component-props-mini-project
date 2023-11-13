@@ -1,18 +1,16 @@
-// App.js or another higher-level component
-import React, { Component } from 'react';
+// Article.js
+import React from 'react';
 
-class App extends Component {
-  componentDidCatch(error, errorInfo) {
-    console.error('Error caught by error boundary:', error, errorInfo);
-  }
+const Article = ({ title, date, preview }) => {
+  const defaultDate = "January 1, 1970";
 
-  render() {
-    return (
-      <div className="App">
-        {/* ... rest of the components */}
-      </div>
-    );
-  }
-}
+  return (
+    <article>
+      <h3>{title}</h3>
+      <small>{date || defaultDate}</small>
+      <p>{preview}</p>
+    </article>
+  );
+};
 
-export default App;
+export default Article;
