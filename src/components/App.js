@@ -1,15 +1,20 @@
-import React from "react";
-import blogData from "../data/blog";
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
+import Footer from './Footer';  
 
-console.log(blogData);
+import blogData from '../data/blog';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name={blogData.name} />
+      <About image={blogData.image} about={blogData.about} />
+      <ArticleList posts={blogData.posts} />
+      <Footer text={blogData.footer} />
     </div>
   );
-}
+};
 
 export default App;
